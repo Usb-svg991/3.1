@@ -125,6 +125,8 @@ class InvoiceCalculator {
     }
 }
 
+//скидка
+
 function demo(): Invoice {
     const lines = [
         new LaborLine("Overtime job", 2, 100),
@@ -142,9 +144,9 @@ function demo(): Invoice {
 
 function getResult(invoice: Invoice): void {
     invoice.issue()
-    const calculator = new InvoiceCalculator()
+    const calculator = new InvoiceCalculator()// калькулятор 
 
-    const total: Money = calculator.sum(invoice.getLines(), invoice.getDiscount())
+    const total: Money = calculator.sum(invoice.getLines(), invoice.getDiscount()) // калькулятор 
 
     const payment = new CashPayment()
     const result = payment.pay(invoice, total)
